@@ -1,0 +1,79 @@
+<main>
+  <div class="menu">
+    <h2>Alicuotas</h2>
+    <div class="bar">
+      <ul>
+        <li>
+          <a routerLink="/dashboard/user" class="nav-link" href="#">Usuarios</a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/lote" class="nav-link" href="#">Lotes</a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/ali" class="nav-link" href="#">Alicuotas</a>
+        </li>
+      </ul>
+    </div>
+    <div class="boton"><p-button (click)="cerrarSesion()">Cerrar Sesion</p-button></div>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="card">
+      <h1>Usuarios</h1>
+      <div class="fields">
+      
+
+      <div class="field">
+        <label for="identification">Cedula:</label><br>
+        <input
+          pInputText
+          id="identification"
+          formControlName="identification"
+          class="w-20rem"
+        />
+      </div>
+      <div class="field">
+        <label for="name">Nombres:</label><br>
+        <input pInputText id="name" formControlName="name" class="w-20rem" />
+      </div>
+
+      <div class="field">
+        <label for="lastname">Apellidos:</label><br>
+        <input
+          pInputText
+          id="lastname"
+          formControlName="lastname"
+          class="w-20rem"
+        />
+      </div>
+      <div class="field">
+        <label for="cellPhone">Telefono:</label><br>
+        <input pInputText id="email" formControlName="cellPhone" class="w-20rem" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email:</label><br>
+        <input pInputText id="email" formControlName="email" class="w-20rem" />
+      </div>
+
+      <div class="field">
+        <label for="state">Habita:</label><br>
+        <p-dropdown formControlName="state" [options]="states" optionLabel="name" placeholder="Seleccione el estado"></p-dropdown>
+      </div>
+
+      <div class="botones">
+        <p-button
+          label="Aceptar"
+          severity="success"
+          (click)="onSubmit()"
+        ></p-button>
+        <p-button
+          label="Cancelar"
+          (click)="close()"
+          severity="warning"
+        ></p-button>
+      </div>
+    </div>
+
+    </div>
+  </form>
+</main>
